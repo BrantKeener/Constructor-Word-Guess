@@ -1,13 +1,10 @@
-// TODO build array of new letter objects that represent the letters of the word to be guessed
-// Function that returns a string representing the word. The function will call each letter object and concatenate either the letter or a blank depending if the word has been guessed
-// Function that takes a character, and runs the guess function on each letter object
-// require letter.js and only letter.js
 
 let letter = require('./Letter.js');
 let letterArray = [];
 let wordBuilt = [];
 let remainingGuesses = 5;
 let lettersGuessed = [];
+const playArea = `\n||=====Word To Be Guessed=====||\n`
 
 function wordSplit(word) {
     letterArray.length = 0;
@@ -22,7 +19,7 @@ function wordSplit(word) {
 };
 
 function initialDisplay() {
-    console.log(`\n${wordBuilt.join('')}`);
+    console.log(`\n${playArea}\n${wordBuilt.join('')}\n${playArea}`);
 };
 
 function letterGuess(res) {
@@ -46,7 +43,7 @@ function wordBuild() {
     for(let i = 0; i < letterArray.length; i++) {
         wordBuilt.splice(i, 1, `${letterArray[i].charGuess()} `);
     };
-    console.log(`\n${wordBuilt.join('')}\n`);
+    console.log(`\n${playArea}\n${wordBuilt.join('')}\n${playArea}`);
 };
 
 module.exports = { remainingGuesses, lettersGuessed, letterArray, wordSplit, letterGuess };

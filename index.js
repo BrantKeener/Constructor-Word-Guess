@@ -1,3 +1,5 @@
+// TODO link to portfolio
+// ADD comments throughout code
 
 const inquirer = require('inquirer');
 const divider = `\n====================\n`;
@@ -41,7 +43,7 @@ function userInteraction() {
     wordBuilder.letterArray.map(x => {
         tempArray.push(x.guessed);
     });
-    console.log(`${divider}Incorrect Guesses: ${lg.join()}${divider}`);
+    console.log(`${divider}Incorrect Letters Guessed: ${lg.join()}${divider}`);
     console.log(`You have ${remainingGuesses - lGLength} guesses remaining\n`);
     if((remainingGuesses - lGLength) === 0) {
         console.log(`${divider}You didn't get this one.${divider}`);
@@ -63,6 +65,7 @@ function userInteraction() {
             let regex = /[a-z]/i;
             let test = regex.test(output);
             if(length === 1 && test === true) {
+                console.log(`\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`)
                 output = output.toLowerCase();
                 wordBuilder.letterGuess(output);
                 userInteraction();
